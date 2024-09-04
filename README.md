@@ -1,2 +1,2 @@
 # Moneymaxxers
-learn how to moneymax with a 7 day free trial of Khan Academy
+learn how to moneymax with our website!

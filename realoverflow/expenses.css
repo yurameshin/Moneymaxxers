@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Garamond;
+  overflow-x: hidden;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background-color: #cacaca;
+  color: rgb(0, 0, 0);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  color: #fff3dd;
+  background-color: #4f5ec4;
+  height: 6%;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 15px;
+  transition: background-color 0.5s;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff3dd;
+}
+
+nav ul li:hover {
+  background-color: #7d8ced;
+}
+
+nav ul li button {
+  background-color: #fff3dd;
+  color: #4f5ec4;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.05em;
+  border: 2px solid black;
+}
+
+body {
+  font-family: garamond;
+  margin: 50px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input, button {
+  padding: 5px;
+}
+
+button {
+  background-color: #4f5ec4;
+  color: white;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(46, 147, 3);
+}
+
+.title {
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+  text-align: center;
+}
+
+hr {
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+  border: 1px dotted black;
+}
+
+h4 {
+  margin-left: 10px;
+  margin-bottom: 2vmin;
+}
+
+.input-container {
+  margin-left: 10px;
+}
+
+.maincontainer {
+  background-color: white;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  border: 2px black solid;
+  box-shadow: 10px 30px 20px 2px #494949;
+}
+
+.container {
+  position: relative;
+  border-radius: 5px;
+  height: 60px;
+  transition: 1s;
+  overflow-y: hidden;
+}
+.container p {
+  margin-left: 10px;
+  font-weight: 100;
+}
+.container #totalAmount {
+  font-weight: 900;
+}
+
+.container:hover {
+  background-color: #e5e5e5;
+}
+
+.labeller {
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.subtitle {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+span {
+  position: absolute;
+  right: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}/*# sourceMappingURL=expenses.css.map */

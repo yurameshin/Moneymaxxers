@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracking</title>
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+    <nav>
+        <div class ='logo'>logo</div>
+        <ul>
+            <li><a>Expenses</a></li>
+            <li><a>Budgeting</a></li>
+            <li><a>Insurance</a></li>
+            <li><a>Useful Links</a></li>
+            <li><a href ='game.html'>Game</a></li>
+            <li><button>Log out</button></li>
+        </ul>
+    </nav>
+    <div class="maincontainer">
+        <div class="title">
+            <h1>Expense List</h1>
+            <div class="subtitle">
+                <p class="subtitle">Address: 180 Ang Mo Kio Ave 8</p>
+                <p class="subtitle">Tele No. : 6451 5115</p>
+            </div>
+        </div>
+        <hr>
+
+        <h4>Add Expense</h4>
+
+        <div class="input-container">
+            <label for="inputBox">Expense:</label>
+            <input type="text" id="inputBox" placeholder="Type something...">
+            <label for="moneyBox">Amount spent:</label>
+            <input type="text" id="moneyBox" placeholder="Enter money">
+            <button onclick="displayText()">Display</button>
+        </div>
+        <hr>
+        <p class="error" id="errorMessage"></p>
+        <div class = "container"><p><div class="labeller">Description</div><span class="cost labeller">Cost</span></p></div>
+        <div id="displayArea">
+
+        </div>
+        <hr>
+        <div class="container">
+            <p class="total" id="totalAmount">Total Amount Spent: <span>$0.00</span></p>
+        </div>
+    </div>
+
+    <script>
+        const totalAmountElement = document.getElementById('totalAmount');
+        const displayArea = document.getElementById('displayArea');
+
+        
+        async function displayText() {
+            const inputText = document.getElementById('inputBox').value;
+            const moneyInput = document.getElementById('moneyBox').value;
+            const moneyPattern = /^\d+(\.\d{1,2})?$/;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (moneyPattern.test(moneyInput)) {
+                errorMessage.textContent = '';  
+                
+                
+                try {
+                    const response = await fetch('http://localhost:5000/add-entry', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            text_input: inputText,
+                            money: moneyInput
+                        })
+                    });
+
+                    const result = await response.json();
+                    loadEntries(); 
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            } else {
+                errorMessage.textContent = 'Please enter a valid amount of money (e.g., 10.50)';
+            }
+        }
+
+        
+        async function loadEntries() {
+            try {
+                const response = await fetch('http://localhost:5000/entries');
+                const entries = await response.json();
+
+                displayArea.innerHTML = ''; 
+                let totalSpent = 0;
+
+                entries.forEach(entry => {
+                    displayArea.innerHTML += `<div class = "container"><p>${entry.text_input}<span>$${parseFloat(entry.money).toFixed(2)}</span></p></div>`;
+                    
+                    totalSpent += parseFloat(entry.money);
+                });
+
+                totalAmountElement.innerHTML = `Total Amount Spent: <span class = "cost">$${totalSpent.toFixed(2)}</span>`;
+            } catch (error) {
+                console.error('Error fetching entries:', error);
+            }
+        }
+
+        
+        loadEntries();
+    </script>
+</body>
+</html>

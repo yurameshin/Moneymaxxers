@@ -24,7 +24,7 @@ def add_entry():
     text_input = data['text_input']
     money_input = float(data['money'])
 
-se
+
     cursor.execute("SELECT * FROM Entries WHERE text_input = %s", (text_input,))
     result = cursor.fetchone()
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moneymaxxing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='budgetstyle.css') }}">
+    <link rel="stylesheet" href="budgetstyle.css">
+</head>
+<body>
+    <script>
+        function open() {
+            document.querySelector("form").style.display = "block"
+        }
+
+        function close() {
+            document.querySelector("form").style.display = "none"
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const checkAndReset = () => {
+                var today = new Date();
+                var firstDayOfMonth = today.getDate();
+
+                if (firstDayOfMonth == 1) {
+                    alert("It's the beginning of a new month, do remember to set a new budget!")
+                }
+            };
+
+            checkAndReset();
+        });
+
+    </script>
+    <nav>
+        <!--center a bunch of text then have an image in the middle of them and the text navigates you to the different pages and shit-->
+    
+        <a href ='templates/index.html'><div class ='logo'><img src='images/subway_surfers_short-ezgif.com-crop.gif'></div></a>
+        <ul>
+            <li><a href="expenses.html">Expenses</a></li>
+            <li><a href="#" class="current">Budgeting</a></li>
+            <li><a href="templates/insurance/insure.html">Insurance</a></li>
+            <li><a href='templates/game.html'><button>Quiz</button></a></li>
+        </ul>
+        
+    </nav>
+    <header>
+        <div class="btext">
+            <h1>BUDGETING</h1>
+            <p>Create a monthly budget to control spending and achieve your financial goals. Use reports to track progress and make informed decisions.</p>
+        </div>
+        <div class="budget" onclick="open()">
+            This month's budget:
+        </div>
+    </header>
+    <form action="#">
+        <span onclick="close">&#10006;</span>
+        <label for="input">The enter your new budget:</label>
+        <input type="number" id="input" max="10000" min="0" placeholder="100" required>
+
+        <input type="submit" id="btn" value="Confirm">
+    </form>
+    <script>
+        const btn = document.getElementById("btn");
+
+        function no1() {
+            const input1 = document.getElementById("input");
+            const output = document.querySelector(".budget");
+            var int = parseInt(input1.value);
+            var existingNode = document.getElementById('displayNode');
+
+            if (int>0 && int<10000 && Number.isInteger(int)==true || int==0) {
+                if (existingNode != null) {
+                    existingNode.innerHTML = input1.value;
+                } 
+
+                else {
+                    existingNode = document.createElement("p");
+                    existingNode.setAttribute('id','displayNode');
+                    existingNode.innerHTML = input1.value;
+                    output.appendChild(existingNode);
+                }
+            }
+        }
+
+        btn.addEventListener('click', no1);
+
+        function no2() {
+            var expenses = 1
+            var budget = parseInt(document.getElementById("input"));
+            var svg = document.querySelector("svg");
+            var text = document.querySelector("text");
+            function per(i,p) {
+                var result = (i/p)*100;
+                return result;
+            }
+            var percentage = per(expenses,budget);
+            var value1 = 565-(percentage*5);
+            value1 = value1.toString() + "px";
+            svg.setAttribute("stroke-dashoffset",value1);
+            text.innerHTML = value1;
+        }
+
+        btn.addEventListener('click', no2);
+    </script>
+    <svg width="200" height="200" viewBox="-25 -25 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
+        <circle r="90" cx="100" cy="100" fill="transparent" stroke="#e0e0e0" stroke-width="16px" stroke-dasharray="565.48px" stroke-dashoffset="0"></circle>
+        <circle r="90" cx="100" cy="100" stroke="#eef956" stroke-width="15" stroke-linecap="round" stroke-dashoffset="565px" fill="transparent" stroke-dasharray="565.48px"></circle>
+        <text x="71px" y="114px" fill="#f3fe58" font-size="44px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)"></text>
+      </svg>
+    <div id="wq">
+        <h2>Guidelines</h2>
+        <p>Budget must be:</p>
+        <ul>
+            <li>An integer</li>
+            <li>More than or equals to 0</li>
+            <li>Less than 10000</li>
+        </ul>
+    </div>
+</body>
+</html>

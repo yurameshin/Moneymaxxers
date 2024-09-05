@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Garamond;
+    overflow-x: hidden;
+    /*
+    border: 1px solid red;
+    */
+    
+}
+
+/*Colour for current nav page*/
+.current{
+    color: orange;
+}
+  
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    height: 5vh;
+    width: 8vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+body,html{
+    height: 100%;
+}
+body {
+    background-color: #fff3dd;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #fff3dd;
+    background-color: #4f5ec4;
+   
+    height: 6%;
+    width: 100vw;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+nav ul li{
+    padding: 15px;
+    transition: background-color 0.5s;
+    
+    
+}
+nav ul li:hover{
+    background-color: #7d8ced;
+}
+nav ul li button {
+    background-color:#fff3dd;
+    color:#4f5ec4;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.05em;
+    border: 2px solid black;
+}
+.homepage{
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)),url('../images/roulette.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff3dd;
+    
+    font-weight: bolder;
+}
+.homepage img{
+    height: 8vh;
+    width: 8vw;
+    object-fit: contain;
+    opacity: 0.7;
+    
+}
+.homepage h1 {
+    font-size: 5em;
+    padding: 10px;
+    
+}
+.homepage p{
+    font-size: 1.2em;
+    padding: 10px;
+    text-align: center;
+}
+.homepage_game img{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    top: 80%;
+    margin: auto;
+}
+.block {
+    font-size:1.2em;
+    font-weight: 300;
+}
+.firstblock {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 99vw;
+    height: 52.5vh;
+    
+    padding: 10px;
+    overflow: hidden;
+}
+.expenses{
+    height: 50vh;
+    width: 50vw;
+    /*
+    border: 5px solid #4f5ec4;
+    border-radius: 5%;
+    
+    border: 10px solid rgb(88, 170, 222);
+    border-style: inset;
+    */
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)),url('../images/cash_rainign.png');
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.75s;
+
+}
+.expenses:hover{
+    opacity: 0.85;
+}
+.expenseimg{
+    height: 40vh;
+    width: 20vw;
+    object-fit: cover;
+    overflow:hidden;
+    padding: 10px;
+    
+}
+.expensetext{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    color: #fff3dd;
+    padding: 10px;
+}
+.expensetext img{
+    object-fit: contain;
+    height:5vh;
+    width: 5vw;
+    padding: 10px;
+}
+.budgeting{
+    height: 50vh;
+    width: 50vw;
+    /*
+    border: 10px solid rgb(88, 170, 222);
+    border-style: inset;
+    */
+    padding: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)),url('../images/poker.jpeg');
+    background-position: center;
+    background-size:cover ;
+    background-repeat: no-repeat;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.75s;
+  
+}
+.budgeting:hover{
+    opacity: 0.85;
+}
+.budgettext{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    color: #fff3dd;
+    padding: 10px;
+    
+}
+.secondblock {
+    margin-top: 10px;
+    width: 98.5vw;
+    height: 52.5vh;
+    padding: 10px;
+    /*
+    background-image:linear-gradient(rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)), url(../images/ambulance.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    */
+    
+}
+.insurance{
+    margin: auto;
+    height: 50vh;
+    width: 95vw;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)), url(../images/ambulance.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.75s;
+
+}
+.insurance:hover{
+    opacity:0.85;
+}
+.insurancetext {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff3dd;
+}
+.thirdblock{
+    margin-top: 10px;
+    width: 98.5vw;
+    height: 52.5vh;
+    padding: 10px;
+}
+.games{
+    margin: auto;
+    height: 50vh;
+    width: 95vw;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)), url(../images/me_btw.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.75s;
+}
+.games:hover{
+    opacity: 0.85;
+}
+.gamestext{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff3dd;
+}
+footer {
+    background-color: #4f5ec4;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container h3 {
+    font-family: 'Garamond', serif;
+    font-size: 1.2em;
+    color: #fff3dd;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-container ul li {
+    margin: 10px 0;
+}
+
+.footer-container ul li a {
+    text-decoration: none;
+    color: #fff3dd;
+    font-family: 'Garamond', serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.footer-container ul li a:hover {
+    text-decoration: underline;
+}

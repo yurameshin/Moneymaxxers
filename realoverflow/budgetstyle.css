@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Garamond;
+    overflow-x: hidden;
+  }
+  
+  .current {
+    color: orange;
+}
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+}
+  
+  .logo {
+    height: 5vh;
+    width: 8vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    overflow: hidden;
+}
+  
+  body, html {
+    height: 100%;
+}
+  
+  body {
+    background-color: #cacaca;
+    color: rgb(0, 0, 0);
+}
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #fff3dd;
+    background-color: #4f5ec4;
+    height: 6%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+  
+  nav ul li {
+    padding: 15px;
+    transition: background-color 0.5s;
+}
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff3dd;
+}
+  
+  nav ul li:hover {
+    background-color: #7d8ced;
+}
+  
+  nav ul li button {
+    background-color: #fff3dd;
+    color: #4f5ec4;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.05em;
+    border: 2px solid black;
+}
+header {
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.9)),url('./images/gradient.jpeg');
+    background-repeat: no-repeat;
+    color: #fffdf8;
+    font-weight: bolder;
+}
+
+header h1 {
+    font-size: 3.5vw;
+    max-width: fit-content;
+}
+
+header p {
+    margin-top: 1.2vw;
+    font-weight: lighter;
+    font-size: 1.5vw;
+    width: 40vw;
+    line-height: 2vw;
+}
+
+.btext {
+    width: fit-content;
+    margin-top: 6vw;
+    margin-left: 4.5vw;
+}
+
+.budget {
+    background: rgb(135,32,32);
+    background: linear-gradient(90deg, rgba(135,32,32,1) 30%, rgba(198,195,0,1) 100%);
+    margin-left: 55vw;
+    width: 30vw;
+    padding: 2vw;
+    border-radius: 2vw;
+    font-size: 1.7vw;
+    font-weight: lighter;
+    font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+    margin-top: -10vw;
+}
+
+form {
+    margin-top: -35vw;
+    margin-left: 30%;
+    display: none;
+    width: 40%;
+    height: 40%;
+    background-color: #fffdf8;
+}
+
+svg{
+    position: relative;
+    top: -25vw;
+    margin-left: 5vw;
+    background-color: transparent;
+}
+
+#wq h2{
+    margin-top: -25vw;
+    z-index: 100;
+}
